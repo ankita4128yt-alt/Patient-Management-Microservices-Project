@@ -1,0 +1,52 @@
+### Maven ###
+target/
+.mvn/wrapper/maven-wrapper.properties
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+### Spring Boot ###
+*.log
+spring.log
+logs/
+### Build files ###
+build/
+### OS generated files ###
+.DS_Store
+Thumbs.db
+### Environment / Config ###
+.env
+application-local.properties
+application-local.yml
+application-secret.properties
+application-secret.yml
+### Java ###
+*.class
+### Package files ###
+*.jar
+*.war
+*.ear
+### Temporary files ###
+*.swp
+*.swo
+*~
+### Eclipse ###
+.project
+.classpath
+.settings/
+### STS ###
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+### VS Code ###
+.vscode/
+### Test reports ###
+/surefire-reports/
+/test-output/
+### Lombok ###
+lombok.config
+### Docker ###
+docker-compose.override.yml is correct gitnore for intellij , spring boot ,maven
