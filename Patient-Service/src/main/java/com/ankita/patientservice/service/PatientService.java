@@ -1,5 +1,6 @@
 package com.ankita.patientservice.service;
 
+import com.ankita.patientservice.dto.PatientRequestDTO;
 import com.ankita.patientservice.dto.PatientResponseDTO;
 import com.ankita.patientservice.mapper.PatientMapper;
 import com.ankita.patientservice.model.Patient;
@@ -22,5 +23,11 @@ public class PatientService {
         // now i need to convert my patients to patientDTOs
        // return patients.stream().map(patient -> PatientMapper.toDTO(patient)).toList();
         return patients.stream().map(PatientMapper::toDTO).toList();
+    }
+
+    public PatientResponseDTO createPatients(PatientRequestDTO patientRequestDTO){
+        Patient newPatient = PatientMapper.toEntity(patientRequestDTO);
+        patientRepository.save(newPatient);
+        return PatientMapper.toDTO(newPatient);
     }
 }

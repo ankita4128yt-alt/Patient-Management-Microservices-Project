@@ -35,11 +35,11 @@ public class Patient {
     @Column(nullable = false) //db [jpa]
     private String address;
 
-    @NotBlank
+    @NotNull
     @Column(nullable = false )
     private LocalDate dateOfBirth;
 
-    @NotBlank
+    @NotNull
     @Column(nullable = false )
     private LocalDate registeredDate;
 
@@ -93,3 +93,5 @@ public class Patient {
 }
 
 // as i have jpa therefore database is neccessary
+//notblank - strings only
+//notnull - objects
