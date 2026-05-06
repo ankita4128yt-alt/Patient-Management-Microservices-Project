@@ -2,6 +2,7 @@ package com.ankita.patientservice.service;
 
 import com.ankita.patientservice.dto.PatientRequestDTO;
 import com.ankita.patientservice.dto.PatientResponseDTO;
+import com.ankita.patientservice.exception.EmailAlreadyExistsException;
 import com.ankita.patientservice.mapper.PatientMapper;
 import com.ankita.patientservice.model.Patient;
 import com.ankita.patientservice.repository.PatientRepository;
@@ -26,6 +27,7 @@ public class PatientService {
     }
 
     public PatientResponseDTO createPatients(PatientRequestDTO patientRequestDTO){
+        if(patientRepository.existsByEmail(patientRequestDTO.getEmail())) throw new EmailAlreadyExistsException("A patient with this email already Exists "+patientRequestDTO.getEmail());
         Patient newPatient = PatientMapper.toEntity(patientRequestDTO);
         patientRepository.save(newPatient);
         return PatientMapper.toDTO(newPatient);

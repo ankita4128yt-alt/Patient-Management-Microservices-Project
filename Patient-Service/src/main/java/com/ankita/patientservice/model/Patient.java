@@ -20,6 +20,7 @@ public class Patient {
     //“Your input is wrong, and here’s exactly why.” clear communication
     //Validation = security checkpoint before entering airport.
     //“Reject bad data early, clearly, and safely.”
+    //without validations - in errors more exposure to our internal stuff with validations clean and clear communication / response / error
     //Database says
     //“Something broke.”
     @NotNull // validations
