@@ -9,4 +9,5 @@ import java.util.UUID;
 public interface PatientRepository extends JpaRepository<Patient, UUID> {
     boolean existsByEmail(String email);
     //method name spacial meaning jpa creates queries with the help of method name
+    boolean existsByEmailAndIdNot(String email , UUID id);
 }

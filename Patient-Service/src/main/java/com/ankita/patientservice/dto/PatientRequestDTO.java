@@ -1,25 +1,26 @@
 package com.ankita.patientservice.dto;
 
+import com.ankita.patientservice.dto.validators.ValidationGroups;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public class PatientRequestDTO {
-    @NotBlank(message = "name is required")
+    @NotBlank(groups = {ValidationGroups.Create.class, ValidationGroups.Update.class}, message = "name is required")
     @Size(max =100 , message = "name cannot exceed 100 characters")
     private String name;
 
-    @NotBlank(message = "address is required")
+    @NotBlank(groups = {ValidationGroups.Create.class, ValidationGroups.Update.class},message = "address is required")
     private String address;
 
-    @NotBlank(message = "dateOfBirth is required")
+    @NotBlank(groups = {ValidationGroups.Create.class, ValidationGroups.Update.class},message = "dateOfBirth is required")
     private String dateOfBirth;
 
-    @NotBlank(message = "email is required")
+    @NotBlank(groups = {ValidationGroups.Create.class, ValidationGroups.Update.class},message = "email is required")
     @Email(message = "email should be valid")
     private String email;
 
-    @NotBlank(message = " registered date is required")
+    @NotBlank(groups = {ValidationGroups.Create.class},message = " registered date is required")
     private String registeredDate;
 
     public String getRegisteredDate() {
